@@ -1,3 +1,9 @@
+## [1.44.0](https://github.com/ivandpc/morphe-patches-sync/compare/v1.43.4...v1.44.0) (2026-09-18)
+
+### ✨ New Features
+
+* Add remote play/pause bridges to Playback sync ([52e2d03](https://github.com/ivandpc/morphe-patches-sync/commit/52e2d035e1d777e9dc52e082cc42f687cf5fef2d))
+
 ## [1.43.4](https://github.com/ivandpc/morphe-patches-sync/compare/v1.43.3...v1.43.4) (2026-09-18)
 
 ### 🐛 Bug Fixes
