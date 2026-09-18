@@ -1,3 +1,9 @@
+## [1.43.3](https://github.com/ivandpc/morphe-patches-sync/compare/v1.43.2...v1.43.3) (2026-09-18)
+
+### 🐛 Bug Fixes
+
+* Add missing string resources for Playback sync settings ([9fc4039](https://github.com/ivandpc/morphe-patches-sync/commit/9fc4039d8f64ab1e492579f70153deaaadc108c6))
+
 ## [1.43.0](https://github.com/MorpheApp/morphe-patches/compare/v1.42.0...v1.43.0) (2026-09-14)
 
 ### 🐛 Bug Fixes
