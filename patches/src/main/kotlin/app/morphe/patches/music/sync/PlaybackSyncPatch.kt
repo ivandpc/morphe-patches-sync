@@ -1,8 +1,10 @@
 package app.morphe.patches.music.sync
 
 import app.morphe.patcher.extensions.InstructionExtensions.addInstruction
+import app.morphe.patcher.extensions.InstructionExtensions.getInstruction
 import app.morphe.patcher.patch.BytecodePatchContext
 import app.morphe.patcher.patch.bytecodePatch
+import app.morphe.util.indexOfFirstInstructionOrThrow
 import app.morphe.patches.music.misc.extension.sharedExtensionPatch
 import app.morphe.patches.music.misc.settings.PreferenceScreen
 import app.morphe.patches.music.misc.settings.settingsPatch
@@ -14,6 +16,8 @@ import app.morphe.patches.music.video.information.musicVideoTimeHook
 import app.morphe.patches.shared.misc.settings.preference.SwitchPreference
 import app.morphe.patches.shared.misc.settings.preference.TextPreference
 import app.morphe.util.addStaticFieldToExtension
+import app.morphe.util.getReference
+import app.morphe.util.indexOfFirstInstructionOrThrow
 import com.android.tools.smali.dexlib2.Opcode
 import com.android.tools.smali.dexlib2.iface.ClassDef
 import com.android.tools.smali.dexlib2.iface.Method
@@ -87,13 +91,19 @@ val playbackSyncPatch = bytecodePatch(
         addTransportBridge("playerInstancePause", "pause", playerType, controllerField, controllerType, pauseMethod)
 
         // Populate both instance fields whenever a player is constructed.
+        // Must be AFTER the super <init> call (like VideoInformationPatch does):
+        // touching `this` before it fails class verification at load time.
         val playerConstructor = playerClass.methods.first { it.name == "<init>" }
+        val superInitIndex = playerConstructor.indexOfFirstInstructionOrThrow {
+            opcode == Opcode.INVOKE_DIRECT &&
+                    getReference<MethodReference>()?.name == "<init>"
+        } + 1
         playerConstructor.addInstruction(
-            0,
+            superInitIndex,
             "sput-object p0, $EXTENSION_CLASS_DESCRIPTOR->playerInstancePlay:$playerType",
         )
         playerConstructor.addInstruction(
-            1,
+            superInitIndex + 1,
             "sput-object p0, $EXTENSION_CLASS_DESCRIPTOR->playerInstancePause:$playerType",
         )
     }
