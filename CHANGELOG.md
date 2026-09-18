@@ -1,3 +1,9 @@
+## [1.43.4](https://github.com/ivandpc/morphe-patches-sync/compare/v1.43.3...v1.43.4) (2026-09-18)
+
+### 🐛 Bug Fixes
+
+* Replace okhttp with dependency-free WebSocket client in Playback sync ([36dcabb](https://github.com/ivandpc/morphe-patches-sync/commit/36dcabb56465670a0399d0fbada75d1859c1a816))
+
 ## [1.43.3](https://github.com/ivandpc/morphe-patches-sync/compare/v1.43.2...v1.43.3) (2026-09-18)
 
 ### 🐛 Bug Fixes
