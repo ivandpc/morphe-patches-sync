@@ -149,6 +149,9 @@ public class Settings extends SharedYouTubeSettings {
     public static final BooleanSetting CROSSFADE_SESSION_CONTROL = new BooleanSetting("morphe_music_crossfade_session_control", TRUE, parent(CROSSFADE_ENABLED));
 
     // Miscellaneous
+    public static final BooleanSetting PLAYBACK_SYNC_ENABLED = new BooleanSetting("morphe_music_sync_enabled", FALSE, true);
+    public static final StringSetting PLAYBACK_SYNC_SERVER_URL = new StringSetting("morphe_music_sync_server_url", "ws://your-server:8765", false, parent(PLAYBACK_SYNC_ENABLED));
+    public static final StringSetting PLAYBACK_SYNC_ROOM = new StringSetting("morphe_music_sync_room", "", false, parent(PLAYBACK_SYNC_ENABLED));
     public static final EnumSetting<ClientType> SPOOF_VIDEO_STREAMS_CLIENT_TYPE = new EnumSetting<>("morphe_spoof_video_streams_client_type", ClientType.VISIONOS_1_02, true, parent(SPOOF_VIDEO_STREAMS));
 
     public static final BooleanSetting PLAY_ALBUMS_SONGS = new BooleanSetting("morphe_music_play_album_songs", FALSE, true, parent(SPOOF_VIDEO_STREAMS));
