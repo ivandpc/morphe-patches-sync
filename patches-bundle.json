@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-09-19T00:10:00",
+  "created_at": "2026-09-19T00:30:00",
   "description": "Playback sync patch for YouTube Music (Spotify Connect-style sync via self-hosted server). Based on Morphe Patches v1.43.0.",
-  "download_url": "https://github.com/ivandpc/morphe-patches-sync/releases/download/v1.43.0-sync.1/patches-1.43.0.mpp",
+  "download_url": "https://github.com/ivandpc/morphe-patches-sync/releases/download/v1.43.1/patches-1.43.1.mpp",
   "signature_download_url": "",
-  "version": "1.43.0"
+  "version": "1.43.1"
 }
