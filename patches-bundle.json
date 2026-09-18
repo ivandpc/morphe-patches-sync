@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-09-18T23:04:16",
-  "description": "## [1.44.0](https://github.com/ivandpc/morphe-patches-sync/compare/v1.43.4...v1.44.0) (2026-09-18)\n\n### ✨ New Features\n\n* Add remote play/pause bridges to Playback sync ([52e2d03](https://github.com/ivandpc/morphe-patches-sync/commit/52e2d035e1d777e9dc52e082cc42f687cf5fef2d))",
-  "download_url": "https://github.com/ivandpc/morphe-patches-sync/releases/download/v1.44.0/patches-1.44.0.mpp",
+  "created_at": "2026-09-18T23:28:53",
+  "description": "## [1.44.1](https://github.com/ivandpc/morphe-patches-sync/compare/v1.44.0...v1.44.1) (2026-09-18)\n\n### 🐛 Bug Fixes\n\n* Hook player instance after super init to avoid VerifyError ([9b70cf0](https://github.com/ivandpc/morphe-patches-sync/commit/9b70cf04d36a0771ac6911457a671a8a2223ebcc))",
+  "download_url": "https://github.com/ivandpc/morphe-patches-sync/releases/download/v1.44.1/patches-1.44.1.mpp",
   "signature_download_url": "",
-  "version": "1.44.0"
+  "version": "1.44.1"
 }

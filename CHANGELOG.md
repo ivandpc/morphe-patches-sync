@@ -1,3 +1,9 @@
+## [1.44.1](https://github.com/ivandpc/morphe-patches-sync/compare/v1.44.0...v1.44.1) (2026-09-18)
+
+### 🐛 Bug Fixes
+
+* Hook player instance after super init to avoid VerifyError ([9b70cf0](https://github.com/ivandpc/morphe-patches-sync/commit/9b70cf04d36a0771ac6911457a671a8a2223ebcc))
+
 ## [1.44.0](https://github.com/ivandpc/morphe-patches-sync/compare/v1.43.4...v1.44.0) (2026-09-18)
 
 ### ✨ New Features
