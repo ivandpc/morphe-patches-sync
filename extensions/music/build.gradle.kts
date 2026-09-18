@@ -6,8 +6,6 @@ dependencies {
     compileOnly(project(":extensions:shared:library"))
     compileOnly(project(":extensions:youtube:stub"))
     compileOnly(libs.annotation)
-    // Provided by host YT Music app at runtime; compileOnly to avoid bundling.
-    compileOnly(libs.okhttp)
 }
 
 configure<ApplicationExtension> {
