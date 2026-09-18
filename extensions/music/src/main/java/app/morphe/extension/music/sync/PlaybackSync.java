@@ -316,8 +316,19 @@ public class PlaybackSync {
                                 () -> applyingRemote = false, 500);
                     }
                 });
+            } else if ("play".equals(action) || "pause".equals(action)) {
+                runOnMain(() -> {
+                    applyingRemote = true;
+                    try {
+                        if ("play".equals(action)) play();
+                        else pause();
+                    } finally {
+                        new Handler(Looper.getMainLooper()).postDelayed(
+                                () -> applyingRemote = false, 500);
+                    }
+                });
             } else {
-                // TODO: play/pause/playVideo need a player-controller hook.
+                // TODO: playVideo needs a loadVideo bridge on the controller.
                 Log.i(TAG, "command ignored (no bridge yet): " + cmd);
             }
         } catch (Exception e) {
@@ -328,6 +339,21 @@ public class PlaybackSync {
     private static void runOnMain(Runnable r) {
         if (Looper.myLooper() == Looper.getMainLooper()) r.run();
         else new Handler(Looper.getMainLooper()).post(r);
+    }
+
+    /**
+     * Bridge methods - implementations are injected by the patch via
+     * addStaticFieldToExtension. Do not call directly from outside commands;
+     * use the command handler instead.
+     */
+    @SuppressWarnings("SameReturnValue")
+    public static void play() {
+        Log.w(TAG, "play: bridge not injected (patch not applied?)");
+    }
+
+    @SuppressWarnings("SameReturnValue")
+    public static void pause() {
+        Log.w(TAG, "pause: bridge not injected (patch not applied?)");
     }
 
     /** Manual remote control from in-app UI (TODO). */
